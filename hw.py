@@ -1,7 +1,12 @@
 from typing import List, Any, Dict, Set, Generator
 
 def squares(n: int):
-    return [i**2 for i in range(n+1)]
+    if n == 0:
+        return [0]
+    return [i**2 for i in range(n)]
+
+def odd_squares(n: int) -> set[int]:
+    return {i**2 for i in range(1, n+1, 2)}
 
 def unique_squares(numbers: List[int]) -> Set[int]:
     return {x**2 for x in set(numbers)}
@@ -12,11 +17,8 @@ def char_counts(text: str) -> Dict[str, int]:
 def flatten(nested_list: List[List[Any]]) -> List[Any]:
     return [item for sublist in nested_list for item in sublist]
 
-def squares_gen(n: int) -> Generator[int, None, None]:
+def squares_gen(n: int):
     return (i**2 for i in range(n+1))
-
-def odd_squares(n: int) -> set[int]:
-    return {i**2 for i in range(1, n+1, 2)}
 
 def index_map(text: str) -> dict[str, int]:
     return {c: i for i, c in enumerate(text)}

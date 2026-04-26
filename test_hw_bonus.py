@@ -1,5 +1,5 @@
 import unittest
-import bonus_hw
+import hw_bonus
 
 class TestBonus(unittest.TestCase):
 
